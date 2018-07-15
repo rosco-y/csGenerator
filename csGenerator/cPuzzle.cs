@@ -12,6 +12,10 @@ namespace csGenerator
         int[,,,] _col;
         int[,,,] _box;
         int[,,] _solved;
+        int[,,] _puzzle;
+        int[,] _r_1;
+        int[,] _c_1;
+
         #endregion PRIVATE MEMBERS
 
         #region public MEMBERS
@@ -35,6 +39,9 @@ namespace csGenerator
             _col  = new int[g.LAYERS, g.SIZE, g.SIZE, 2];
             _box = new int[g.LAYERS, g.SIZE, g.SIZE, 2];
             _solved = new int[g.LAYERS, g.SIZE, g.SIZE];
+            _puzzle = new int[g.LAYERS, g.SIZE, g.SIZE];
+            _r_1 = new int[g.LAYERS, g.SIZE * g.SIZE];
+            _c_1 = new int[g.LAYERS, g.SIZE * g.SIZE];
         }
 
         #endregion Construction

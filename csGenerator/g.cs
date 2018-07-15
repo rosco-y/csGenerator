@@ -8,7 +8,7 @@ namespace csGenerator
     {
         public const int LAYERS = 9;
         public const int SIZE = 9;
-
+        public const int N_SET_QUADS = 5;
         
     }
 }
