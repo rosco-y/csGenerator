@@ -4,9 +4,16 @@ namespace csGenerator
 {
     class cMain
     {
+        cPuzzle _puzzle;
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+               
+        }
+
+        void createPuzzle()
+        {
+            _puzzle = new cPuzzle();
         }
     }
 }
