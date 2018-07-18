@@ -4,16 +4,18 @@ namespace csGenerator
 {
     class cMain
     {
-        cPuzzle _puzzle;
-
         static void Main(string[] args)
         {
-               
+
+            createPuzzle();
+            Console.Write("Done. Press Any Key: ");
+            Console.ReadKey();
         }
 
-        void createPuzzle()
+        static void createPuzzle()
         {
-            _puzzle = new cPuzzle();
+            cPuzzle puzzle = new cPuzzle();
+            Console.WriteLine(puzzle.DisplayString());
         }
     }
 }
