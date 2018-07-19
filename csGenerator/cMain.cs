@@ -7,15 +7,11 @@ namespace csGenerator
         static void Main(string[] args)
         {
 
-            createPuzzle();
+            cTestPuzzle test = new cTestPuzzle();
+            test.TestLoop();
             Console.Write("Done. Press Any Key: ");
             Console.ReadKey();
         }
 
-        static void createPuzzle()
-        {
-            cPuzzle puzzle = new cPuzzle();
-            Console.WriteLine(puzzle.DisplayString());
-        }
     }
 }

@@ -36,6 +36,11 @@ namespace csGenerator.Model
         {
             get { return _candidates.FinalValue; }
         }
+
+        public bool Remove(int value)
+        {
+            return _candidates.Remove(value);
+        }
         #endregion ---------------------------------^^^ PUBLIC ACCESS ^^^---------------------------------
 
     } // END CLASS cCell

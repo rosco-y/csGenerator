@@ -79,6 +79,11 @@ namespace csGenerator
             return sbGrid.ToString();
         }
 
+        public cCell[][] Grid
+        {
+            get { return _grid; }
+            set { _grid = value; }
+        }
         #endregion ----------------------------------- PRIVATE ACCESS ------------------------------------
 
         #region --------------------------------------- PUBLIC ACCESS ------------------------------------
