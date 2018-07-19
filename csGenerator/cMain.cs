@@ -6,11 +6,18 @@ namespace csGenerator
     {
         static void Main(string[] args)
         {
-
-            cTestPuzzle test = new cTestPuzzle();
-            test.TestLoop();
-            Console.Write("Done. Press Any Key: ");
-            Console.ReadKey();
+            try
+            {
+                cTestPuzzle test = new cTestPuzzle();
+                test.TestLoop();
+                Console.Write("Done. Press Any Key: ");
+                Console.ReadKey();
+            }
+            catch (Exception X)
+            {
+                Console.WriteLine(X.Message);
+                Console.ReadKey();
+            }
         }
 
     }

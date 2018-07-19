@@ -21,7 +21,7 @@ namespace csGenerator.Model
         public cCandidate()
         {
             _candidates = new List<int>();
-            refillCandidates();
+            RefillCandidates();
 
         }
 
@@ -33,15 +33,6 @@ namespace csGenerator.Model
         #endregion -------------------------------- CONSTRUCTION ----------------------------------------
 
         #region ----------------------------------- PRIVATE ACCESS --------------------------------------
-        void refillCandidates()
-        {
-            _candidates.Clear();
-            //populate candidates with 1 through NUM_CANDIDATES;
-            for (int candidate = 1; candidate <= NUM_CANDIDATES; candidate++)
-            {
-                _candidates.Add(candidate);
-            }
-        }
 
         bool CandidateFound(int candidate)
         {
@@ -51,27 +42,51 @@ namespace csGenerator.Model
         #endregion ----------------------------------- PRIVATE ACCESS --------------------------------------
 
         #region ----------------------------------- PUBLIC  ACCESS -----------------------------------------
+        public void RefillCandidates()
+        {
+            _candidates.Clear();
+            //populate candidates with 1 through NUM_CANDIDATES;
+            for (int candidate = 1; candidate <= NUM_CANDIDATES; candidate++)
+            {
+                if (!_candidates.Contains(candidate))
+                    _candidates.Add(candidate);
+            }
+        }
+
         public bool Remove(int candidate)
         {
             bool removed = false;
 
-            // TODO: 'while loop feels like overkill here: when would there be more than 1 of each candidate?
-            if (_candidates.Count > 1)
+            // TODO: 'while loop feels like overkill here: when would there be more than 1 of each candidate?        
+            /// if there are only two candidates
+            /// ie  1, 2
+            /// and '2' is removed. then the finalValue must be 1.
+            try
             {
-                // if one removal was successful.
-                removed = _candidates.Remove(candidate);
-            }
-            else
-            {
-                if (_candidates.Contains(candidate))
+                if (_candidates.Count > 2 && _candidates.Count != 2)
                 {
-                    /// assigning the result of _candidates.Remove() to removed, 
-                    /// and testing this result.
-                    if (removed = _candidates.Remove(candidate))
+                    // if one removal was successful.
+                    removed = _candidates.Remove(candidate);
+                }
+                else
+                {
+                    if (_candidates.Contains(candidate))
                     {
-                        FinalValue = candidate;
+                        /// assigning the result of _candidates.Remove() to removed, 
+                        /// and testing this result.
+                        if (removed = _candidates.Remove(candidate))
+                        {
+                            FinalValue = _candidates[0]; //.FindIndex(0);
+                        }
                     }
                 }
+
+            }
+            catch (Exception x)
+            {
+                string msg = $"cCandidate.Remove({candidate}).  _candidates.Count = {_candidates.Count}" + Environment.NewLine
+                    + $"{x.Message}";
+                throw new Exception(msg);
             }
             return removed;
         }

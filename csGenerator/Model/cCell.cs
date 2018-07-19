@@ -32,6 +32,11 @@ namespace csGenerator.Model
         #endregion --------------------------------^^^ PRIVATE ACCESS ^^^---------------------------------
 
         #region ------------------------------------vvv PUBLIC ACCESS vvv---------------------------------
+        public void RefillCandidates()
+        {
+            _candidates.RefillCandidates();
+        }
+
         public int FinalValue
         {
             get { return _candidates.FinalValue; }
