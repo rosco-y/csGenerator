@@ -63,14 +63,14 @@ namespace csGenerator.Model
             /// and '2' is removed. then the finalValue must be 1.
             try
             {
-                if (_candidates.Count > 2 && _candidates.Count != 2)
+                if (_candidates.Contains(candidate))
                 {
-                    // if one removal was successful.
-                    removed = _candidates.Remove(candidate);
-                }
-                else
-                {
-                    if (_candidates.Contains(candidate))
+                    if (_candidates.Count > 2 && _candidates.Count != 2)
+                    {
+                        // if one removal was successful.
+                        removed = _candidates.Remove(candidate);
+                    }
+                    else
                     {
                         /// assigning the result of _candidates.Remove() to removed, 
                         /// and testing this result.
@@ -101,8 +101,8 @@ namespace csGenerator.Model
                 int count = _candidates.Count;
                 if (count == 0 && FinalValue == 0)
                 {
-                    string msg = "cCandidate.Count" + Environment.NewLine + 
-                    $"Count = {count} and finalValue = {FinalValue}" + Environment.NewLine + 
+                    string msg = "cCandidate.Count" + Environment.NewLine +
+                    $"Count = {count} and finalValue = {FinalValue}" + Environment.NewLine +
                     "Final Value must be set when Candidates Count == 0.";
                     throw new Exception(msg);
                 }
@@ -111,7 +111,7 @@ namespace csGenerator.Model
         }
 
 
-        
+
         #endregion ----------------------------------- PUBLIC  ACCESS --------------------------------------
     }// END CLASS csCandidate
 

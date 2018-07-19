@@ -28,7 +28,6 @@ namespace csGenerator
         {
             for (int i = 1; i<= g.SIZE; i++)
             {
-                PrintPuzzle();
                 for (int r = 0; r < g.SIZE; r++)
                 {
                     for (int c = 0; c < g.SIZE; c++)
@@ -39,6 +38,7 @@ namespace csGenerator
 
                 }
                 RemoveAllExcept(i);
+                PrintPuzzle();
             }
         }
 
