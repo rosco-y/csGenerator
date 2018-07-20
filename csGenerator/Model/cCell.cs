@@ -5,7 +5,7 @@ using csGenerator;
 
 namespace csGenerator.Model
 {
-    class cCell
+    public class cCell
     {
 
         #region -----------------------------------vvv PRIVATE MEMBERS vvv--------------------------------

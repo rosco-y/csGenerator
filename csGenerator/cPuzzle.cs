@@ -5,7 +5,7 @@ using csGenerator.Model;
 using csGenerator;
 namespace csGenerator
 {
-    class cPuzzle
+    public class cPuzzle
     {
         #region -------------------------------------- PRIVATE MEMBERS -----------------------------------
         //int[,,] _grid;
