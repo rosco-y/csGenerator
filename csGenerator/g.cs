@@ -4,6 +4,7 @@ using System.Text;
 
 namespace csGenerator
 {
+
     public static class g
     {
         public const int LAYERS = 9;
