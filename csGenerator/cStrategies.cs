@@ -54,33 +54,50 @@ namespace csGenerator
         // LEVEL 1
         public bool NakedPair { get; set; } = false;
         public bool HiddenPair { get; set; } = false;
-        public bool BoxLine  { get; set; } = false;
-        public bool PointingLine  { get; set; } = false;
+        public bool BoxLine { get; set; } = false;
+        public bool PointingLine { get; set; } = false;
         // LEVEL 2
-        public bool NakedTriple  { get; set; } = false;
-        public bool NakedQuad  { get; set; } = false;
-        public bool X_Wing  { get; set; } = false;
-        public bool Y_Wing  { get; set; } = false;
+        public bool NakedTriple { get; set; } = false;
+        public bool NakedQuad { get; set; } = false;
+        public bool X_Wing { get; set; } = false;
+        public bool Y_Wing { get; set; } = false;
         // LEVEL 3
-        public bool XY_Chain  { get; set; } = false;
-        public bool Rectagle  { get; set; } = false;
-        public bool Lines_3  { get; set; } = false;
-        public bool Lines_4  { get; set; } = false;
+        public bool XY_Chain { get; set; } = false;
+        public bool Rectagle { get; set; } = false;
+        public bool Lines_3 { get; set; } = false;
+        public bool Lines_4 { get; set; } = false;
         // LEVEL 4
-        public bool BackTracking  { get; set; } = false;
+        public bool BackTracking { get; set; } = false;
 
         #endregion --------------------------------^^^ PUBLIC MEMBERS ^^^---------------------------------
-        #region UNUSED REGIONS
+
 
         #region ------------------------------------vvv CONSTRUCTION vvv----------------------------------
+        // empty constructor
+        public cStrategies() { }
+
         #endregion----------------------------------^^^ CONSTRUCTION ^^^----------------------------------
 
         #region -----------------------------------vvv PRIVATE ACCESS vvv---------------------------------
         #endregion --------------------------------^^^ PRIVATE ACCESS ^^^---------------------------------
 
         #region ------------------------------------vvv PUBLIC ACCESS vvv---------------------------------
+        public void Reset()
+        {
+            NakedSingle = StrategyUnique = StrategyCleanup =
+                NakedPair = HiddenPair = BoxLine = NakedTriple =
+                NakedQuad = X_Wing = Y_Wing = XY_Chain = Rectagle =
+                Lines_3 = Lines_4 = BackTracking = false;
+        }
 
-        #endregion ---------------------------------^^^ PUBLIC ACCESS ^^^---------------------------------
-        #endregion UNUSED REGIONS
-    }  // END CLASS
-}
+
+        //NakedSingle = false;
+        //StrategyUnique = false;
+        //StrategyCleanup = false;
+        //NakedPair = false;
+        //HiddenPair = false;
+
+    } // END CLASS
+    #endregion ---------------------------------^^^ PUBLIC ACCESS ^^^---------------------------------
+} // END NAMESPACE  
+

@@ -64,7 +64,7 @@ namespace csGenerator
                 //if ((r + 1) % 3 == 0)
                 for (int c = 0; c < g.SIZE; c++)
                 {
-                    sWriteLine += $"{_grid[r][c].FinalValue} ";
+                    sWriteLine += $"{_grid[r][c].Solution} ";
                         if ((c + 1) % 3 == 0)
                             sWriteLine += " | ";
                     }

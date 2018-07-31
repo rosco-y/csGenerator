@@ -41,7 +41,7 @@ namespace UnitTestProject
             {
                 for (int c = 0; c < g.SIZE; c++)
                 {
-                    sum += _puzzle.Grid[r][c].FinalValue;
+                    sum += _puzzle.Grid[r][c].Solution;
 
                 }
 

@@ -14,7 +14,7 @@ namespace csGenerator.Model
         #endregion ----------------------------------- PRIVATE MEMBERS -----------------------------------
 
         #region -------------------------------------- PUBLIC MEMBERS ------------------------------------
-        public int FinalValue { get; private set; } = 0;
+        public int Solution { get; private set; } = 0;
         #endregion ----------------------------------- PUBLIC MEMBERS -----------------------------------
 
         #region --------------------------------------- CONSTRUCTION ------------------------------------
@@ -60,7 +60,7 @@ namespace csGenerator.Model
             // TODO: 'while loop feels like overkill here: when would there be more than 1 of each candidate?        
             /// if there are only two candidates
             /// ie  1, 2
-            /// and '2' is removed. then the finalValue must be 1.
+            /// and '2' is removed. then the solution must be 1.
             try
             {
                 if (_candidates.Contains(candidate))
@@ -76,7 +76,7 @@ namespace csGenerator.Model
                         /// and testing this result.
                         if (removed = _candidates.Remove(candidate))
                         {
-                            FinalValue = _candidates[0]; //.FindIndex(0);
+                            Solution = _candidates[0]; //.FindIndex(0);
                         }
                     }
                 }
@@ -99,10 +99,10 @@ namespace csGenerator.Model
             get
             {
                 int count = _candidates.Count;
-                if (count == 0 && FinalValue == 0)
+                if (count == 0 && Solution == 0)
                 {
                     string msg = "cCandidate.Count" + Environment.NewLine +
-                    $"Count = {count} and finalValue = {FinalValue}" + Environment.NewLine +
+                    $"Count = {count} and solution = {Solution}" + Environment.NewLine +
                     "Final Value must be set when Candidates Count == 0.";
                     throw new Exception(msg);
                 }

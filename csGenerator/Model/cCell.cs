@@ -37,9 +37,9 @@ namespace csGenerator.Model
             _candidates.RefillCandidates();
         }
 
-        public int FinalValue
+        public int Solution
         {
-            get { return _candidates.FinalValue; }
+            get { return _candidates.Solution; }
         }
 
         public bool Remove(int value)
