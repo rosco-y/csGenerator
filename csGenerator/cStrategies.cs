@@ -91,12 +91,7 @@ namespace csGenerator
         }
 
 
-        //NakedSingle = false;
-        //StrategyUnique = false;
-        //StrategyCleanup = false;
-        //NakedPair = false;
-        //HiddenPair = false;
-
+       
     } // END CLASS
     #endregion ---------------------------------^^^ PUBLIC ACCESS ^^^---------------------------------
 } // END NAMESPACE  
