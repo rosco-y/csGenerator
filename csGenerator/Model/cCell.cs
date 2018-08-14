@@ -42,9 +42,14 @@ namespace csGenerator.Model
             get { return _candidates.Solution; }
         }
 
-        public bool Remove(int value)
+        public bool RemoveCandidate(int value)
         {
             return _candidates.Remove(value);
+        }
+
+       public List<int> Candidates
+        {
+            get { return _candidates.Candidates; }
         }
         #endregion ---------------------------------^^^ PUBLIC ACCESS ^^^---------------------------------
 

@@ -72,7 +72,7 @@ namespace csGenerator.Model
                     }
                     else
                     {
-                        /// assigning the result of _candidates.Remove() to removed, 
+                        /// assigning the result of _candidates.RemoveCandidate() to removed, 
                         /// and testing this result.
                         if (removed = _candidates.Remove(candidate))
                         {
@@ -84,7 +84,7 @@ namespace csGenerator.Model
             }
             catch (Exception x)
             {
-                string msg = $"cCandidate.Remove({candidate}).  _candidates.Count = {_candidates.Count}" + Environment.NewLine
+                string msg = $"cCandidate.RemoveCandidate({candidate}).  _candidates.Count = {_candidates.Count}" + Environment.NewLine
                     + $"{x.Message}";
                 throw new Exception(msg);
             }
@@ -110,7 +110,10 @@ namespace csGenerator.Model
             }
         }
 
-
+        public List<int> Candidates
+        {
+            get { return _candidates; }
+        }
 
         #endregion ----------------------------------- PUBLIC  ACCESS --------------------------------------
     }// END CLASS csCandidate
